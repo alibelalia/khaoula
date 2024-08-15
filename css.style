@@ -7,20 +7,34 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden; /* لضمان عدم ظهور شريط التمرير */
 }
 
 .container {
     text-align: center;
+    background: #fff; /* خلفية بيضاء حول المحتوى */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .bear-img {
     width: 200px; /* حجم الصورة */
-    border-radius: 50%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.message-container {
+    background: #fff; /* خلفية بيضاء للرسالة */
+    border-radius: 10px;
+    padding: 20px;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .message {
-    margin-top: 20px;
     font-size: 1.2em;
-    color: #333; /* لون النص */
-    padding: 0 20px;
+    color: #333;
+    line-height: 1.6;
 }
