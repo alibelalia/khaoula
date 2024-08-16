@@ -1,16 +1,26 @@
-// Function to create and animate hearts
-function createHeart() {
-    const heart = document.createElement('div');
-    heart.className = 'heart';
-    heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
-    heart.style.animationDuration = Math.random() * 5 + 5 + 's'; // Random animation duration
-    document.body.appendChild(heart);
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('surpriseButton');
+    const surpriseDiv = document.getElementById('surprise');
 
-    // Remove heart after animation ends
-    heart.addEventListener('animationend', () => {
-        heart.remove();
+    button.addEventListener('click', () => {
+        fetch('surprise.php')
+            .then(response => response.text())
+            .then(data => {
+                surpriseDiv.innerHTML = data;
+            });
     });
-}
 
-// Create hearts at regular intervals
-setInterval(createHeart, 300);
+    // Generate falling hearts
+    function createHearts() {
+        const container = document.querySelector('.hearts');
+        for (let i = 0; i < 20; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = `${Math.random() * 100}vw`;
+            heart.style.animationDuration = `${Math.random() * 5 + 5}s`;
+            container.appendChild(heart);
+        }
+    }
+
+    createHearts();
+});
