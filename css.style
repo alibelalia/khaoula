@@ -15,10 +15,18 @@ body {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
+    position: relative;
+    z-index: 1; /* Ensure the container is above the hearts */
 }
 
 h1 {
     color: #ff1493; /* Deep pink */
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin: 1em 0;
 }
 
 img {
