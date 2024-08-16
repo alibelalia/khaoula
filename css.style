@@ -1,40 +1,55 @@
 body {
+    font-family: Arial, sans-serif;
+    background-color: #ffb6c1; /* Light pink background */
+    color: #333;
+    text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #FFC0CB; /* لون وردي */
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden; /* لضمان عدم ظهور شريط التمرير */
+    overflow: hidden; /* Hide overflow to prevent scrollbars from the hearts */
 }
 
 .container {
-    text-align: center;
-    background: #fff; /* خلفية بيضاء حول المحتوى */
-    border-radius: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 50px auto;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.bear-img {
-    width: 200px; /* حجم الصورة */
-    height: auto;
-    border-radius: 15px;
-    margin-bottom: 20px;
+h1 {
+    color: #ff1493; /* Deep pink */
 }
 
-.message-container {
-    background: #fff; /* خلفية بيضاء للرسالة */
-    border-radius: 10px;
-    padding: 20px;
-    display: inline-block;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    margin: 20px 0;
 }
 
-.message {
-    font-size: 1.2em;
-    color: #333;
-    line-height: 1.6;
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff1493;
+    clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
+    opacity: 0;
+    pointer-events: none;
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-100px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
