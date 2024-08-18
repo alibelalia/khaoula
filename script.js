@@ -1,26 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const button = document.getElementById('surpriseButton');
-    const surpriseDiv = document.getElementById('surprise');
+// helper functions
+const PI2 = Math.PI * 2
+const random = (min, max) => Math.random() * (max - min + 1) + min | 0
+const timestamp = _ => new Date().getTime()
 
-    button.addEventListener('click', () => {
-        fetch('surprise.php')
-            .then(response => response.text())
-            .then(data => {
-                surpriseDiv.innerHTML = data;
-            });
-    });
+// container
+class Birthday {
+  constructor() {
+    this.resize()
 
-    // Generate falling hearts
-    function createHearts() {
-        const container = document.querySelector('.hearts');
-        for (let i = 0; i < 20; i++) {
-            const heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.style.left = `${Math.random() * 100}vw`;
-            heart.style.animationDuration = `${Math.random() * 5 + 5}s`;
-            container.appendChild(heart);
-        }
-    }
+    // create a lovely place to store the firework
+    this.fireworks = []
+    this.counter = 0
 
-    createHearts();
-});
+  }
+  
+  resize() {
+    this.width = canvas.width = window.innerWidth
+    let center = this.width / 2 | 0
+    this.spawnA = center - center / 4 | 0
+    this.spawnB = center + center / 4 | 0
+    
+    this.height = canvas.height = window.innerHeight
+    this.spawnC = this.height * .1
+    this.spawnD = this.height * .5
