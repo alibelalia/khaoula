@@ -1,94 +1,18 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8bbd0;
-    color: #333;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    overflow: hidden;
+  margin: 0;
+  background: #020202;
+  cursor: crosshair;
 }
-
-.container {
-    padding: 20px;
-}
-
+canvas{display:block}
 h1 {
-    color: #c2185b;
-}
-
-p {
-    font-size: 1.2em;
-}
-
-.cake-image {
-    max-width: 80%;
-    height: auto;
-    margin: 20px 0;
-}
-
-button {
-    background-color: #c2185b;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-button:hover {
-    background-color: #ad1457;
-}
-
-/* Hearts Animation */
-.hearts {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.heart {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: red;
-    transform: rotate(-45deg);
-    animation: fall 5s infinite;
-}
-
-.heart::before,
-.heart::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: red;
-}
-
-.heart::before {
-    top: -10px;
-    left: 0;
-}
-
-.heart::after {
-    top: 0;
-    left: 10px;
-}
-
-/* Animation */
-@keyframes fall {
-    0% {
-        top: -50px;
-        opacity: 1;
-    }
-    100% {
-        top: 100vh;
-        opacity: 0;
-    }
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: "Source Sans Pro";
+  font-size: 5em;
+  font-weight: 900;
+  -webkit-user-select: none;
+  user-select: none;
 }
