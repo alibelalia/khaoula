@@ -1,18 +1,48 @@
 body {
-  margin: 0;
-  background: #020202;
-  cursor: crosshair;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
 }
-canvas{display:block}
-h1 {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-family: "Source Sans Pro";
-  font-size: 5em;
-  font-weight: 900;
-  -webkit-user-select: none;
-  user-select: none;
+
+.container {
+    text-align: center;
+}
+
+.message {
+    display: none;
+    font-size: 3em;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transform: translateY(-50px);
+}
+
+.message.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-button {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff0066;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.reveal-button:hover {
+    background-color: #cc0055;
 }
